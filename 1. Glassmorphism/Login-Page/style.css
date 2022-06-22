@@ -16,7 +16,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, #e7627d 26%, #b8235a 39%, #801357 51%, #3d1635 64%, #1c1a27 90%);
+    background: linear-gradient(to bottom, #e7627d 25%, #b8235a 39%, #801357 51%, #3d1635 64%, #1c1a27 90%);
 }
 
 .container {
