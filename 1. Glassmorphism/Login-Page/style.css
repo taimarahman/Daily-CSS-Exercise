@@ -65,10 +65,10 @@ section {
 
 
 .container .square:nth-child(3) {
-    bottom: -100px;
-    left: 150px;
-    width: 60px;
-    height: 60px;
+    bottom: -80px;
+    left: 120px;
+    width: 40px;
+    height: 40px;
     z-index: 2;
 }
 
@@ -107,11 +107,16 @@ section {
     background-color: #fff;
 }
 
+.form .inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+}
+
 .form input {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.2);
-    margin-top: 20px;
-    padding: 10px 20px;
+    padding: 15px 20px;
     outline: none;
     border-radius: 35px;
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -121,11 +126,29 @@ section {
     letter-spacing: 1px;
     color: #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
 }
 
-.form input::placeholder {
-    font-family: 'Raleway', sans-serif;
+.form .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 15px 20px;
+    pointer-events: none;
     color: #fff;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.form input:valid ~ span,
+.form input:focus ~ span {
+    color: #3d1635;
+    font-size: 0.65em;
+    font-weight: 600;
+    background-color: #fff;
+    border-radius: 35px;
+    padding: 1px 10px; 
+    letter-spacing: 1px;
+    transform: translateX(15px) translateY(-5px);
 }
 
 .form input[type="submit"] {
@@ -137,7 +160,7 @@ section {
     cursor: pointer;
     width: auto;
     max-width: 100%;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .forget {
