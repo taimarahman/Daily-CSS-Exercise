@@ -78,5 +78,3 @@ ul li a::before {
 ul li a:hover::before {
     transform: skewX(45deg) translateX(-150px);
 }
-
-
