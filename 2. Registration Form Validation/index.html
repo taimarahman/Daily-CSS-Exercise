@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form Validator</title>
+</head>
+<body> 
+    <div class="container">
+        <div class="square" style="--i:0"></div>
+        <div class="square" style="--i:1"></div>
+        <div class="square" style="--i:2"></div>
+        <div class="square" style="--i:3"></div>
+        <form id="form" class="form">
+            <h2>Register With Us</h2>
+            <div class="inputBox">
+                <input type="text" id="username" required="required">
+                <span>Username</span>
+                <small>Error message</small>
+            </div>
+            <div class="inputBox">
+                <input type="email" id="email" required="required">
+                <span>email</span>
+                <small>Error message</small>
+            </div>
+            <div class="inputBox">
+                <input type="file" id="image" required="required">
+                <!-- <span>Upload image</span> -->
+                <small>Error message</small>
+            </div>
+            <div class="inputBox">
+                <input type="password" id="password" required="required">
+                <span>Password</span>
+                <small>Error message</small>
+            </div>
+            <div class="inputBox">
+                <input type="password" id="password2" required="required">
+                <span>Confirm Password</span>
+                <small>Error message</small>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

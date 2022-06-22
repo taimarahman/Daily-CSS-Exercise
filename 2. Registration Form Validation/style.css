@@ -1,34 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root {
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+}
 
 * {
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    font-family: 'Raleway', sans-serif;
-}
-
-section {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
+body{
+    font-family: 'Open Sans', sans-serif;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, #e7627d 26%, #b8235a 39%, #801357 51%, #3d1635 64%, #1c1a27 90%);
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0; 
+    background: #B993D6;
+    background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);
+    background: linear-gradient(to right, #8CA6DB, #B993D6);    
 }
 
 .container {
     position: relative;
-    width: 400px;
+    width: 420px;
     min-height: 350px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(35px);
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-right: 1px solid rgba(255, 255, 255, 0.2);
@@ -49,8 +51,8 @@ section {
 }
 
 .container .square:nth-child(1) {
-    top: -50px;
-    right: -60px;
+    bottom: 170px;
+    right: -80px;
     width: 100px;
     height: 100px;
 }
@@ -64,16 +66,16 @@ section {
 }
 
 .container .square:nth-child(3) {
-    bottom: -80px;
-    left: 120px;
+    bottom: 160px;
+    left: -180px;
     width: 40px;
     height: 40px;
     z-index: 2;
 }
 
 .container .square:nth-child(4) {
-    top: -100px;
-    right: 150px;
+    top: 100px;
+    right: -150px;
     width: 50px;
     height: 50px;
     z-index: 2;
@@ -86,13 +88,16 @@ section {
     padding: 40px;
 }
 
+
 .container .form h2 {
     position: relative;
     color: #fff;
     font-size: 1.5em;
     font-weight: 600;
     letter-spacing: 1px;
+    margin-top: 10px;
     margin-bottom: 40px;
+    text-transform: uppercase;
 }
 
 .container .form h2::before {
@@ -100,7 +105,7 @@ section {
     position: absolute;
     left: 0;
     bottom: -10px;
-    width: 80px;
+    width: 100px;
     height: 4px;
     border-radius: 10px;
     background-color: #fff;
@@ -109,10 +114,11 @@ section {
 .form .inputBox {
     position: relative;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 35px;
 }
 
-.form input {
+.form input,
+.form button {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.2);
     padding: 15px 20px;
@@ -128,9 +134,19 @@ section {
     position: relative;
 }
 
+.form input[type="file"]::file-selector-button {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    color: #63447b;
+    margin-right: 5px;
+}
+
 .form .inputBox span {
     position: absolute;
     left: 0;
+    top: 0;
     padding: 15px 20px;
     pointer-events: none;
     color: #fff;
@@ -140,7 +156,7 @@ section {
 
 .form input:valid ~ span,
 .form input:focus ~ span {
-    color: #3d1635;
+    color: #63447b;
     font-size: 0.65em;
     font-weight: 600;
     background-color: #fff;
@@ -150,27 +166,37 @@ section {
     transform: translateX(15px) translateY(-5px);
 }
 
-.form input[type="submit"] {
-    font-family: 'Raleway', sans-serif;
+.inputBox.success input {
+    border-color: var(--success-color);
+}
+
+.inputBox.error input {
+    border-color: var(--error-color);    
+}
+
+.inputBox small {
+    color: var(--error-color);
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    visibility: hidden;
+}
+
+.inputBox.error small {
+    visibility: visible;
+}
+
+.form button {
     background-color: #fff;
-    color: #3d1635;
+    color: #63447b;
     font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;
     width: auto;
     max-width: 100%;
-    margin: 20px 0;
+    margin: 30px 0 10px 0;
 }
 
-.forget {
-    margin-top: 5px;
-    color: #fff;
-}
-
-.forget a {
-    color: #fff;
-    font-weight: 600;
-}
 
 @keyframes animate {
     0%, 100% {
