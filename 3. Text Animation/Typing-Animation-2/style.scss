@@ -1,3 +1,18 @@
+@mixin bgAnimation($name, $end-width) {
+    animation-name: $name;
+
+    @at-root {
+        @keyframes #{$name} {
+            0%, 100% {
+                width: 0;
+            }
+            60%, 70% {
+                width: $end-width;
+            }
+        }
+    }
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,34 +31,64 @@ body {
 .wrapper {
     display: flex;
     position: relative;
-}
 
-.wrapper .static-text {
-    color: #fff;
-    font-size: 4em;
-    font-weight: 400;
-}
+    .static-text {
+        color: #fff;
+        font-size: 4em;
+        font-weight: 400;
+        line-height: 90px;
+        height: 90px;
+    }
 
-.wrapper .dynamic-text {
-    margin-left: 15px;
-}
+    .dynamic-text {
+        margin-left: 15px;
+        line-height: 90px;
+        height: 90px;
+        overflow: hidden;
+    
+        li {
+            list-style: none;
+            display: block;
+            position: relative;
+            top: 0;
+            animation: slide 21s steps(3) infinite;
+        
+            span{
+                color: #ff4c29;
+                font-size: 4em;
+                font-weight: 500;
+                display: block;
+                position: relative;
+                overflow: hidden;
 
-
-.wrapper .dynamic-text li {
-    list-style: none;
-    color: #ff4c29;
-    font-size: 4em;
-    font-weight: 500;
-    position: relative;
-}
-
-.wrapper .dynamic-text li::after {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 2px;
-    background-color: #ff4c29;
-    animation: blinkCursor 0.8s steps(3) infinite;
+            }
+            ::before {
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 2px;
+                top: 0;
+                right: 0;
+                background-color: #ff4c29;
+                animation: blinkCursor 0.8s steps(3) infinite;
+            }
+            &:nth-child(1) span {
+                animation: 7s steps(9) infinite;
+                @include bgAnimation(typing1, 316.69px);
+            }
+            &:nth-child(2) span {
+                animation: 7s steps(7) infinite;
+                @include bgAnimation(typing2, 246.31px);
+            }
+            &:nth-child(3) span {
+                animation: 7s steps(11) infinite;
+                @include bgAnimation(typing3, 387.06px);
+            }
+               
+        }
+        
+    }
+    
 }
 
 @keyframes blinkCursor {
@@ -55,3 +100,10 @@ body {
     }
     
 }
+
+@keyframes slide {
+    100%{
+        top: -270px;
+    }
+}
+

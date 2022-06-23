@@ -31,28 +31,120 @@ body {
   color: #fff;
   font-size: 4em;
   font-weight: 400;
+  line-height: 90px;
+  height: 90px;
 }
 
 .wrapper .dynamic-text {
   margin-left: 15px;
+  line-height: 90px;
+  height: 90px;
+  overflow: hidden;
 }
 
 .wrapper .dynamic-text li {
   list-style: none;
+  display: block;
+  position: relative;
+  top: 0;
+  -webkit-animation: slide 21s steps(3) infinite;
+          animation: slide 21s steps(3) infinite;
+}
+
+.wrapper .dynamic-text li span {
   color: #ff4c29;
   font-size: 4em;
   font-weight: 500;
+  display: block;
   position: relative;
+  overflow: hidden;
 }
 
-.wrapper .dynamic-text li::after {
+.wrapper .dynamic-text li ::before {
   content: '';
   position: absolute;
   height: 100%;
   width: 2px;
+  top: 0;
+  right: 0;
   background-color: #ff4c29;
   -webkit-animation: blinkCursor 0.8s steps(3) infinite;
           animation: blinkCursor 0.8s steps(3) infinite;
+}
+
+.wrapper .dynamic-text li:nth-child(1) span {
+  -webkit-animation: 7s steps(9) infinite;
+          animation: 7s steps(9) infinite;
+  -webkit-animation-name: typing1;
+          animation-name: typing1;
+}
+
+@-webkit-keyframes typing1 {
+  0%, 100% {
+    width: 0;
+  }
+  60%, 70% {
+    width: 316.69px;
+  }
+}
+
+@keyframes typing1 {
+  0%, 100% {
+    width: 0;
+  }
+  60%, 70% {
+    width: 316.69px;
+  }
+}
+
+.wrapper .dynamic-text li:nth-child(2) span {
+  -webkit-animation: 7s steps(7) infinite;
+          animation: 7s steps(7) infinite;
+  -webkit-animation-name: typing2;
+          animation-name: typing2;
+}
+
+@-webkit-keyframes typing2 {
+  0%, 100% {
+    width: 0;
+  }
+  60%, 70% {
+    width: 246.31px;
+  }
+}
+
+@keyframes typing2 {
+  0%, 100% {
+    width: 0;
+  }
+  60%, 70% {
+    width: 246.31px;
+  }
+}
+
+.wrapper .dynamic-text li:nth-child(3) span {
+  -webkit-animation: 7s steps(11) infinite;
+          animation: 7s steps(11) infinite;
+  -webkit-animation-name: typing3;
+          animation-name: typing3;
+}
+
+@-webkit-keyframes typing3 {
+  0%, 100% {
+    width: 0;
+  }
+  60%, 70% {
+    width: 387.06px;
+  }
+}
+
+@keyframes typing3 {
+  0%, 100% {
+    width: 0;
+  }
+  60%, 70% {
+    width: 387.06px;
+  }
 }
 
 @-webkit-keyframes blinkCursor {
@@ -70,6 +162,18 @@ body {
   }
   76%, 100% {
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes slide {
+  100% {
+    top: -270px;
+  }
+}
+
+@keyframes slide {
+  100% {
+    top: -270px;
   }
 }
 /*# sourceMappingURL=style.css.map */
