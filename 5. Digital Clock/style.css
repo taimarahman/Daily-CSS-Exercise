@@ -46,6 +46,8 @@ body {
   position: relative;
   width: 150px;
   height: 150px;
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
 }
 
 #time .circle svg circle {
@@ -56,6 +58,13 @@ body {
   stroke-width: 4;
   -webkit-transform: translate(5px, 5px);
           transform: translate(5px, 5px);
+}
+
+#time .circle svg circle:nth-child(2) {
+  stroke: var(--clr);
+  stroke-linecap: round;
+  stroke-dasharray: 440;
+  stroke-dashoffset: 37;
 }
 
 #time div {

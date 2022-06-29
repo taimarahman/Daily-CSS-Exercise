@@ -30,6 +30,7 @@ body {
             position: relative;
             width: 150px;
             height: 150px;
+            transform: rotate(270deg);
 
             circle {
                 width: 100%;
@@ -39,8 +40,11 @@ body {
                 stroke-width: 4;
                 transform: translate(5px, 5px);
 
-                &:nth-child() {
-                    
+                &:nth-child(2) {
+                    stroke: var(--clr);
+                    stroke-linecap: round;
+                    stroke-dasharray: 440;
+                    stroke-dashoffset: 37;
                 }
             }
         }
