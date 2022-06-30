@@ -1,0 +1,104 @@
+$neutral-900: hsl(207,19%,9%);
+$neutral-100: hsl(0,0%,100%);
+$accent-400: hsl(142,90%,61%);
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    line-height: 1.6;
+    background: $neutral-900;
+}
+
+.card {
+    color: $neutral-100;
+    background-image: url(card-bg.jpg);
+    background-size: cover;
+    padding: 10rem 0 0;
+    max-width: 35ch;
+    border-radius: .5rem;
+    overflow: hidden;
+    transition: transform .5s ease;
+
+    &:hover,
+    &:focus-within{
+        transform: scale(1.05);
+    }
+
+    .card-content {
+        $padding: 1.5rem;
+        padding: $padding;
+        background-color: linear-gradient(hsla(0, 0%, 0%, 0) 20%, hsla(0, 0%, 0%, 1));
+        transform: translateY(65%);
+        transition: transform 0.5s ease;
+
+        .card-title{
+            position: relative;
+            max-width: max-content;
+        
+            &::after {
+                content: '';
+                position: absolute;
+                left: calc(-1 * #{$padding});
+                bottom: -10%;
+                width: calc(100% + #{$padding});
+                height: 3px;
+                background-color: $accent-400;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.5s ease;
+            }
+        }
+
+        .button {
+            cursor: pointer;
+            display: inline;
+            text-decoration: none;
+            background-color: $accent-400;
+            color: $neutral-900;
+            padding: 0.5em 1.25em;
+            border-radius: .25rem;
+
+            &:hover,
+            &:focus {
+                background-color: $neutral-100;
+            }
+        }
+    }
+
+    &:hover .card-title::after,
+    &:focus-within .card-title::after {
+        transform: scaleX(1);
+    }
+
+    &:hover .card-content,
+    &:focus-within .card-content {
+        transform: translateY(0);
+        transition-delay: 0.5s;
+    }
+}
+
+@media (hover) {
+    
+}
+
+@media (prefers-reduce-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0ms !important;
+        scroll-behavior: auto !important;
+        transition-delay: 0ms !important;
+    }
+}
+
